@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* ─── Brand tokens ─── */
+:root {
+  --brand-orange: #e05523;
+  --brand-orange-dark: #c44a1c;
+  --brand-green: #16a34a;
+  --brand-green-dark: #15803d;
+  --glass: rgba(255, 255, 255, 0.70);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-hover: rgba(255, 255, 255, 0.85);
+  --glass-strong: rgba(255, 255, 255, 0.95);
+  --glass-strong-border: rgba(0, 0, 0, 0.08);
+  --text: #111827;
+  --text-muted: #4b5563;
+  --text-faint: #9ca3af;
+}
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #111827;
+  --color-accent: var(--brand-orange);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ─── Background: Premium Light layout ─── */
+html {
+  background-color: #ffffff;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #374151;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(224, 85, 35, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(22, 163, 74, 0.02) 0%, transparent 35%);
+  background-attachment: fixed;
+}
+
+/* ─── Glass utilities (Subtle & Light) ─── */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: var(--glass-strong);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-strong-border);
+}
+
+.glass-input {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.glass-pill {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+}
+
+/* font-display alias */
+.font-display {
+  font-family: var(--font-display, var(--font-sans)), Georgia, serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.2); }
+
+::selection {
+  background: rgba(224, 85, 35, 0.15);
+  color: #e05523;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
