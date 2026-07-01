@@ -1,8 +1,6 @@
 # Margros Marketplace
 
-A modern, premium, light-themed hospitality network directory for Bengaluru. This platform connects restaurant operators, kitchen and service professionals, and industrial suppliers in a single, verified layer.
-
-The frontend is built using a clean, white-dominant design system inspired by premium SaaS applications like Stripe, Linear, and Airbnb.
+A hospitality network directory for Bengaluru. This platform connects restaurant operators, kitchen and service professionals, and industrial suppliers in a single, verified layer.
 
 ---
 
