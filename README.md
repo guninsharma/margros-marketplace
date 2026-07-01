@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Margros Marketplace
+
+A modern, premium, light-themed hospitality network directory for Bengaluru. This platform connects restaurant operators, kitchen and service professionals, and industrial suppliers in a single, verified layer.
+
+The frontend is built using a clean, white-dominant design system inspired by premium SaaS applications like Stripe, Linear, and Airbnb.
+
+---
+
+## Tech Stack
+
+- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+- **Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animation**: [Motion (Framer Motion)](https://motion.dev/)
+- **Database / Auth**: [Supabase](https://supabase.com/)
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to run the application locally.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 1. Prerequisites
+Ensure you have **Node.js (v18.x or later)** and **npm** installed on your system.
+
+### 2. Environment Configuration
+Create a `.env.local` file at the root of the project and populate it with your Supabase credentials:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Installation
+Install all dependencies using npm:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Run Development Server
+Start the Next.js development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open **[http://localhost:3000](http://localhost:3000)** in your browser to view the application.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/` — Pages, layout templates, and API endpoints (Next.js App Router).
+  - `app/page.tsx` — Marketing landing page.
+  - `app/(marketplace)/` — Main marketplace pages (restaurants, staff, vendors).
+  - `app/login/` — Sleek authentication gateway.
+- `components/` — Modular React UI components (Grids, filters, navigation layout).
+- `components/ui/` — Design primitives (Floating dock, vanish input, etc.).
+- `lib/` — Supabase integration clients (ssr and client configuration).
+- `public/` — Static assets (logos and icons).
+- `supabase/` — Database migrations and schema definitions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Production Build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To run a production-ready optimized build:
+```bash
+# Compile and build the Next.js production code
+npm run build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Start the built application server
+npm run start
+```
